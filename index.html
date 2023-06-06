@@ -1,0 +1,34 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>Primeiro App</h1>
+    <p>Bem vindo {{nome}}</p>
+    <p>{{bemVindo()}}</p>
+
+    <button v-on:click="entrar(5)"> Entrar </button>
+    <button v-on:click.once="entrar(5)"> Entrar 5 Once</button>
+
+    <a v-bind:href="canal"> Canal Youtube </a>
+
+   
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return {
+                nome: "Carlos Neto",
+                canal: "https://youtube.com"
+            }
+        },
+        methods:{
+            bemVindo(){
+                return 'Bem vindo ' + this.nome;
+            },
+            entrar(nomeAluno){
+                this.nome += nomeAluno;
+            }
+        }
+    })
+</script>
