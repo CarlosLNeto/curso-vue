@@ -4,9 +4,9 @@
 
     <h1>Contador</h1>
 
-    <button v-on:click="diminuir">-</button>
+    <button v-on:click="diminuir(10)">-</button>
         <span>{{numero}}</span>
-    <button v-on:click="somar">+</button>
+    <button v-on:click="somar(10)">+</button>
 
 </div>
 
@@ -19,11 +19,11 @@
             }
         },
         methods:{
-            somar(){
-                this.numero++;
+            somar(operacao){
+                this.numero+= operacao;
             },
-            diminuir(){
-                this.numero--;
+            diminuir(operacao){
+                this.numero-= operacao;
             }
         }
     })
